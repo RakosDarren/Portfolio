@@ -1,8 +1,14 @@
 import React from "react";
-import { useEffect, useState } from "react";
+
+import Navbar from "./components/Navbar";
 
 function App() {
-    return <div>dd</div>
+
+    return (
+    <>
+      <Navbar />
+    </>
+  )
 }
 
 export default App
