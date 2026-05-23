@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   transition: box-shadow 0.25s ease;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -15,7 +16,6 @@
 
 .card img {
   width: 100%;
-  border-radius: 16px;
   margin: 20px 0;
 }
 
