@@ -1,11 +1,13 @@
-html, body {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    background-color: #F0EDE8;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #f0ede8;
+  font-family: system-ui, Arial, sans-serif;
 }
 
 h2 {
-    margin: 0;
+  margin: 0;
 }

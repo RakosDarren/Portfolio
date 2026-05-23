@@ -1,8 +1,5 @@
-import "../styles/CardGrid.css" 
+import "../styles/CardGrid.css";
 
-export default function CardGrid({children}) {
-    
-    return (
-        <div className="grid">{children}</div>
-    )
+export default function CardGrid({ children }) {
+  return <div className="grid">{children}</div>;
 }

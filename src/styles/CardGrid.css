@@ -1,5 +1,5 @@
 :root {
-  --cell: 20vw;
+  --cell: 15vw;
 }
 
 .grid {
@@ -8,7 +8,7 @@
   grid-auto-rows: var(--cell);
   gap: 16px;
 
-  width: var(--cell)*4;
+  width: var(--cell) * 4;
   padding: 16px;
   box-sizing: border-box;
   grid-auto-flow: dense;

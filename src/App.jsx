@@ -1,59 +1,189 @@
 import React from "react";
 import { useState } from "react";
 
-import "./styles/App.css"
+import "./styles/App.css";
+
+//components
 import GridContainer from "./components/GridContainer";
 import CardGrid from "./components/CardGrid";
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
+import CardModal from "./components/CardModal";
+
+//images
+import bikeRepairImg from "./assets/BikeRepair.jpg";
+import memoryGameImg from "./assets/MemoryGame.jpg";
+import eCommerceImg from "./assets/ECommerce.jpg";
+import analyticsImg from "./assets/Analytics.png";
+import linkedInImg from "./assets/LinkedIn.webp";
+import githubImg from "./assets/Github.png";
 
 function App() {
-    const [selected, setSelected] = useState("all");
+  const [selected, setSelected] = useState("all");
 
-    //list of all cards
-    const cards = [
-      {id: 1, size: "wd", category:"1", content: "Wide Card"},
-      {id: 2, size: "sm", category:"2", content: "Small Card"},
-      {id: 3, size: "sm", category:"2", content: "Small Card"},
-      {id: 4, size: "sm", category:"2", content: "Small Card"},
-      {id: 5, size: "sm", category:"2", content: "Small Card"},
-      {id: 6, size: "lg", category:"3", content: "Large Card"},
-      {id: 7, size: "lg", category:"3", content: "Large Card"},
-      {id: 8, size: "wd", category:"1", content: "Wide Card"},
-      {id: 9, size: "sm", category:"2", content: "Small Card"},
-      {id: 10, size: "tl", category:"4", content: "Tall Card"},
-      {id: 11, size: "lg", category:"3", content: "Large Card"},
-      {id: 12, size: "sm", category:"2", content: "Small Card"},
-    ]
+  const [clickedCard, setClickedCard] = useState(null);
 
-    //sort cards to show active cards first
-    const sortedCards = [...cards].sort((a, b) => {
-      const aActive = selected === "all" || a.category === selected;
-      const bActive = selected === "all" || b.category === selected;
+  //list of all cards
+  //id: unique ID so react knows which card is which for filtering/sorting
+  //size: determines the size/shape of the card
+  //category: determines how the navbar sorts the card
+  //content: what's shown on the front of the card
+  //cardType: determines how the card functions
+  //title: what's shown on an "expandable" cardTypes modal as its title
+  //description: what's shown on an "expandable" cardTypes modal as its description
+  //image: image is shown on the front of the card and also in an expandable cardTypes modal, currently image overwrites content
+  //url: where the redirect points to on a "link" cardType
+  const cards = [
+    {
+      id: 1,
+      size: "wd",
+      category: "About",
+      content: "Darren Rakos",
+      cardType: "expandable",
+      title: "Darren Rakos",
+      description: "Hello this is me.",
+    },
+    {
+      id: 2,
+      size: "lg",
+      category: "Work",
+      content: "Case Study 1",
+      cardType: "expandable",
+      title: "Case Study 1",
+      description: "This is a case study",
+      image: bikeRepairImg,
+    },
+    {
+      id: 3,
+      size: "sm",
+      category: "About",
+      content: "LinkedIn",
+      cardType: "link",
+      url: "https://www.linkedin.com/in/darrenrakos-software/",
+      image: linkedInImg,
+    },
+    {
+      id: 4,
+      size: "sm",
+      category: "About",
+      content: "Github",
+      cardType: "link",
+      url: "https://github.com/RakosDarren",
+      image: githubImg,
+    },
+    {
+      id: 5,
+      size: "lg",
+      category: "Work",
+      content: "Case Study 2",
+      cardType: "expandable",
+      title: "Case Study 2",
+      description: "This is a case study",
+      image: memoryGameImg,
+    },
+    {
+      id: 6,
+      size: "wd",
+      category: "About",
+      content: "My UI/UX Experience",
+      cardType: "expandable",
+      title: "My UI/UX Experience",
+      description: "I am taking SEG3125",
+    },
+    {
+      id: 7,
+      size: "lg",
+      category: "Work",
+      content: "Case Study 3",
+      cardType: "expandable",
+      title: "Case Study 3",
+      description: "This is a case study",
+      image: eCommerceImg,
+    },
+    {
+      id: 8,
+      size: "sm",
+      category: "3",
+      content: "Small Card",
+      cardType: "extra",
+    },
+    {
+      id: 9,
+      size: "sm",
+      category: "4",
+      content: "Small Card",
+      cardType: "extra",
+    },
+    {
+      id: 10,
+      size: "lg",
+      category: "Work",
+      content: "Case Study 4",
+      cardType: "expandable",
+      title: "Case Study 4",
+      description: "This is a case study",
+      image: analyticsImg,
+    },
+    {
+      id: 11,
+      size: "tl",
+      category: "3",
+      content: "Tall Card",
+      cardType: "extra",
+    },
+    {
+      id: 12,
+      size: "tl",
+      category: "4",
+      content: "Tall Card",
+      cardType: "extra",
+    },
+  ];
 
-      return bActive - aActive; 
-    });
+  //sort cards to show active cards first
+  const sortedCards = [...cards].sort((a, b) => {
+    const aActive = selected === "all" || a.category === selected;
+    const bActive = selected === "all" || b.category === selected;
 
-    return (
+    return bActive - aActive;
+  });
+
+  return (
     <>
-      <Navbar setSelected={setSelected} selected={selected}/>
+      <Navbar setSelected={setSelected} selected={selected} />
 
       <GridContainer>
         <CardGrid>
-          {sortedCards.map(card => (
+          {sortedCards.map((card) => (
             <Card
               key={card.id}
-              size={card.size}
-              category={card.category}
+              card={card}
               selected={selected}
-            >
-              {card.content}
-            </Card>
+              onClick={() => {
+                if (card.cardType === "link") {
+                  window.open(card.url, "_blank");
+                  return;
+                }
+                setClickedCard(card);
+              }}
+            />
           ))}
         </CardGrid>
       </GridContainer>
+
+      {clickedCard && (
+        <>
+          {/* Card modal */}
+          {clickedCard.cardType === "expandable" && (
+            <CardModal
+              card={clickedCard}
+              onClose={() => setClickedCard(null)}
+            />
+          )}
+        </>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
