@@ -14,22 +14,23 @@
 .navbar button {
   border: none;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.6rem);
   padding: 8px 14px;
   border-radius: 999px;
   cursor: pointer;
   color: #333;
   transition: all 0.2s ease;
+  font-family: "DM Sans";
 }
 
 .navbar button:hover {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: rgba(0, 150, 136, 0.08);
   transform: translateY(-1px);
 }
 
 .navbar button.active {
-  background-color: white;
-  color: #333;
+  background-color: #009688;
+  color: white;
   transform: scale(1.05);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 5px rgba(0, 150, 136, 0.3);
 }

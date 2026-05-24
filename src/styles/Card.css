@@ -2,20 +2,30 @@
   background-color: white;
   border-radius: 25px;
   box-sizing: border-box;
-  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: box-shadow 0.25s ease;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+}
+
+.card-text {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1a1a2e;
 }
 
 .card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 5px 10px 10px rgba(0, 150, 136, 0.5);
+  z-index: 10;
 }
 
 .card img {
   width: 100%;
+  border-radius: 25px;
   margin: 20px 0;
 }
 

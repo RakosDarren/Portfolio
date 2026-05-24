@@ -7,9 +7,17 @@
   grid-template-columns: repeat(4, var(--cell));
   grid-auto-rows: var(--cell);
   gap: 16px;
-
-  width: var(--cell) * 4;
   padding: 16px;
   box-sizing: border-box;
   grid-auto-flow: dense;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --cell: 40vw;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, var(--cell));
+  }
 }

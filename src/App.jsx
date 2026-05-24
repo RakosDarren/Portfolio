@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 import "./styles/App.css";
+import { cardDescriptions } from "./cardContent";
 
 //components
 import GridContainer from "./components/GridContainer";
@@ -27,6 +28,7 @@ function App() {
   //id: unique ID so react knows which card is which for filtering/sorting
   //size: determines the size/shape of the card
   //category: determines how the navbar sorts the card
+  //tooltip: what shows on the tooltip when hovering the card
   //content: what's shown on the front of the card
   //cardType: determines how the card functions
   //title: what's shown on an "expandable" cardTypes modal as its title
@@ -38,25 +40,36 @@ function App() {
       id: 1,
       size: "wd",
       category: "About",
-      content: "Darren Rakos",
+      tooltip: "Learn more about me!",
+      content: (
+        <>
+          Hey, I'm <span style={{ color: "#00897B" }}>Darren Rakos</span>.
+        </>
+      ),
       cardType: "expandable",
-      title: "Darren Rakos",
-      description: "Hello this is me.",
+      title: (
+        <>
+          My name is <span style={{ color: "#00897B" }}>Darren Rakos</span>,
+        </>
+      ),
+      description: cardDescriptions[1],
     },
     {
       id: 2,
       size: "lg",
       category: "Work",
+      tooltip: "Explore this case study",
       content: "Case Study 1",
       cardType: "expandable",
       title: "Case Study 1",
-      description: "This is a case study",
+      description: cardDescriptions[2],
       image: bikeRepairImg,
     },
     {
       id: 3,
       size: "sm",
       category: "About",
+      tooltip: "Connect with me on LinkedIn!",
       content: "LinkedIn",
       cardType: "link",
       url: "https://www.linkedin.com/in/darrenrakos-software/",
@@ -66,6 +79,7 @@ function App() {
       id: 4,
       size: "sm",
       category: "About",
+      tooltip: "Check out my other projects!",
       content: "Github",
       cardType: "link",
       url: "https://github.com/RakosDarren",
@@ -75,29 +89,40 @@ function App() {
       id: 5,
       size: "lg",
       category: "Work",
+      tooltip: "Explore this case study",
       content: "Case Study 2",
       cardType: "expandable",
       title: "Case Study 2",
-      description: "This is a case study",
+      description: cardDescriptions[5],
       image: memoryGameImg,
     },
     {
       id: 6,
       size: "wd",
       category: "About",
-      content: "My UI/UX Experience",
+      tooltip: "What UI/UX is to me",
+      content: (
+        <>
+          My <span style={{ color: "#00897B" }}>UI/UX</span> Experience
+        </>
+      ),
       cardType: "expandable",
-      title: "My UI/UX Experience",
-      description: "I am taking SEG3125",
+      title: (
+        <>
+          My <span style={{ color: "#00897B" }}>UI/UX</span> Experience
+        </>
+      ),
+      description: cardDescriptions[6],
     },
     {
       id: 7,
       size: "lg",
       category: "Work",
+      tooltip: "Explore this case study",
       content: "Case Study 3",
       cardType: "expandable",
       title: "Case Study 3",
-      description: "This is a case study",
+      description: cardDescriptions[7],
       image: eCommerceImg,
     },
     {
@@ -118,10 +143,11 @@ function App() {
       id: 10,
       size: "lg",
       category: "Work",
+      tooltip: "Explore this case study",
       content: "Case Study 4",
       cardType: "expandable",
       title: "Case Study 4",
-      description: "This is a case study",
+      description: cardDescriptions[10],
       image: analyticsImg,
     },
     {
