@@ -129,14 +129,14 @@ function App() {
       id: 8,
       size: "sm",
       category: "3",
-      content: "Small Card",
+      content: "Placeholder",
       cardType: "extra",
     },
     {
       id: 9,
       size: "sm",
       category: "4",
-      content: "Small Card",
+      content: "Placeholder",
       cardType: "extra",
     },
     {
@@ -154,14 +154,14 @@ function App() {
       id: 11,
       size: "tl",
       category: "3",
-      content: "Tall Card",
+      content: "Placeholder",
       cardType: "extra",
     },
     {
       id: 12,
       size: "tl",
       category: "4",
-      content: "Tall Card",
+      content: "Placeholder",
       cardType: "extra",
     },
   ];
