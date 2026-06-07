@@ -34,7 +34,8 @@ function App() {
   //title: what's shown on an "expandable" cardTypes modal as its title
   //description: what's shown on an "expandable" cardTypes modal as its description
   //image: image is shown on the front of the card and also in an expandable cardTypes modal, currently image overwrites content
-  //url: where the redirect points to on a "link" cardType
+  //url: where the redirect points to on a "link" cardType or the modal title of a "expandable" card type
+  //eyebrow: shown above the title of the modal in gray text
   const cards = [
     {
       id: 1,
@@ -61,9 +62,11 @@ function App() {
       tooltip: "Explore this case study",
       content: "Case Study 1",
       cardType: "expandable",
-      title: "Case Study 1",
+      title: "Trailside Bicycle Works",
       description: cardDescriptions[2],
+      url: "https://bike-service-website-six.vercel.app/",
       image: bikeRepairImg,
+      eyebrow: "Case Study"
     },
     {
       id: 3,
@@ -95,6 +98,7 @@ function App() {
       title: "Case Study 2",
       description: cardDescriptions[5],
       image: memoryGameImg,
+      eyebrow: "Case Study"
     },
     {
       id: 6,
@@ -124,6 +128,7 @@ function App() {
       title: "Case Study 3",
       description: cardDescriptions[7],
       image: eCommerceImg,
+      eyebrow: "Case Study"
     },
     {
       id: 8,
@@ -149,6 +154,7 @@ function App() {
       title: "Case Study 4",
       description: cardDescriptions[10],
       image: analyticsImg,
+      eyebrow: "Case Study"
     },
     {
       id: 11,

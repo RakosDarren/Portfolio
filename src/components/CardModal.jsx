@@ -21,8 +21,19 @@ export default function CardModal({ card, onClose }) {
         )}
 
         <div className="modal-body">
-          <p className="modal-eyebrow">Case Study</p>
-          <h2 className="modal-title">{card.title}</h2>
+          <p className="modal-eyebrow">{card.eyebrow}</p>
+          {card.url ? (
+            <a
+              href={card.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="modal-title-link"
+            >
+              <h2 className="modal-title">{card.title}</h2>
+            </a>
+          ) : (
+            <h2 className="modal-title">{card.title}</h2>
+          )}
           <p className="modal-description">{card.description}</p>
         </div>
       </motion.div>

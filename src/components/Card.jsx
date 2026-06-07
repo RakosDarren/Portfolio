@@ -9,7 +9,9 @@ export default function Card({ id, card, selected, onClick }) {
   const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0 });
 
   const inner = card.image ? (
-    <img src={card.image} alt={card.title} />
+    <div className="card-image-wrapper">
+      <img src={card.image} alt={card.title} />
+    </div>
   ) : (
     <span>{card.content}</span>
   );
