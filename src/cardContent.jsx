@@ -71,7 +71,50 @@ export const cardDescriptions = {
   ),
   3: null,
   4: null,
-  5: <>This is a case study</>,
+  5: (
+    <>
+      An interactive{" "}
+      <span style={{ color: "#009688" }}>memory card matching game</span>,
+      built with React and designed around two distinct user personas.
+      <br />
+      <br />
+      Early concepts and screen flows were mapped out as storyboards in{" "}
+      <a
+        href="https://www.figma.com/design/squ6YCIB8vtt5vohkJDNrS/Untitled?node-id=0-1&p=f&t=nvgxqC2bs1c8g89z-0"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: "#009688" }}
+      >
+        Figma
+      </a>
+      , mapping key interactions from game start to leaderboard.
+      <br />
+      <br />
+      Key design principles applied:
+      <br />
+      <br />
+      <span style={{ color: "#009688" }}>Color Palette</span> — A deep navy
+      background with vivid card accents creates strong contrast between the
+      game surface and interactive elements, keeping focus on the cards without
+      visual fatigue.
+      <br />
+      <br />
+      <span style={{ color: "#009688" }}>Iconography</span> — Distinct emoji
+      icons on each card face allow players to recognize and remember pairs at a
+      glance, reducing reliance on text and supporting faster pattern recall.
+      <br />
+      <br />
+      <span style={{ color: "#009688" }}>Negative Space</span> — Consistent
+      gaps between cards prevent the grid from feeling crowded, giving the eye
+      clear boundaries to track flipped and unmatched cards during play.
+      <br />
+      <br />
+      <span style={{ color: "#009688" }}>Typography Hierarchy</span> — Bold
+      headings for the game title and stats contrast with lighter body text for
+      instructions, letting players quickly locate their score and time without
+      interrupting the game flow.
+    </>
+  ),
   6: (
     <>
       I am currently taking{" "}

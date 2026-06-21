@@ -95,8 +95,9 @@ function App() {
       tooltip: "Explore this case study",
       content: "Case Study 2",
       cardType: "expandable",
-      title: "Case Study 2",
+      title: "MemoryMatch",
       description: cardDescriptions[5],
+      url: "https://memory-game-topaz-kappa.vercel.app",
       image: memoryGameImg,
       eyebrow: "Case Study"
     },
