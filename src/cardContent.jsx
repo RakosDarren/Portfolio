@@ -93,13 +93,13 @@ export const cardDescriptions = {
       Key design principles applied:
       <br />
       <br />
-      <span style={{ color: "#009688" }}>Color Palette</span> — A deep navy
-      background with vivid card accents creates strong contrast between the
+      <span style={{ color: "#009688" }}>Color Palette</span> — A clean white 
+      background with navy green cards creates strong contrast between the
       game surface and interactive elements, keeping focus on the cards without
       visual fatigue.
       <br />
       <br />
-      <span style={{ color: "#009688" }}>Iconography</span> — Distinct emoji
+      <span style={{ color: "#009688" }}>Iconography</span> — Distinct 
       icons on each card face allow players to recognize and remember pairs at a
       glance, reducing reliance on text and supporting faster pattern recall.
       <br />
